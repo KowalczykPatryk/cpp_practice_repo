@@ -1,0 +1,1 @@
+/usr/bin/c++ -g -rdynamic CMakeFiles/SnowCannon.dir/main.cpp.o CMakeFiles/SnowCannon.dir/src/Service.cpp.o CMakeFiles/SnowCannon.dir/src/SnowCannon.cpp.o -o SnowCannon 
