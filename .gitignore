@@ -1,0 +1,11 @@
+# Ignore everything
+*
+# But not these files...
+!*/
+!*.cpp
+!*.h
+!CMakeLists.txt
+!Doxyfile
+!.gitignore
+
+/build/
