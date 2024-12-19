@@ -23,7 +23,7 @@ public:
     /**
      * @brief Konstruktor ustający typ produktu oraz ilość na tą samą wartość
      * 
-     * @param type 
+     * @param type ustawia typ produktu
      */
     Product(int type);
     /**
