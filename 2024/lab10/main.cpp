@@ -82,7 +82,7 @@ int main(int argc, char** argv)
 	Shop S3(Product(2), e3);
 	S3.Print();
 	S3.Remove();
-	S3.Print();
+	S3.Print(); 
 	S3.Remove();
 	S3.Print();
 	S3.Add(e3);
