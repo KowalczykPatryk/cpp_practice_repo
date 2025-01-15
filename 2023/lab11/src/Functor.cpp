@@ -6,22 +6,22 @@ Functor::Functor()
     this->aEqualb = 0;
     this->aGreaterb = 0;
 }
-int Functor::operator()(int a, int b)
+bool Functor::operator()(int a, int b)
 {
     if (a < b)
     {
         this->aLessb++;
-        return 1;
+        return a < b;
     }
     else if (a == b)
     {
         this->aEqualb++;
-        return 0;
+        return a < b;
     }
     else
     {
         this->aGreaterb++;
-        return 0;
+        return a < b;
     }
 }
 void Functor::wypiszStatystyki()

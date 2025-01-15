@@ -9,6 +9,6 @@ private:
     int aGreaterb;
 public:
     Functor();
-    int operator()(int a, int b);
+    bool operator()(int a, int b);
     void wypiszStatystyki();
 };
