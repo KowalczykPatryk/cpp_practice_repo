@@ -1,6 +1,7 @@
 #include "Complex.h"
 #include <cmath>
 #include <string>
+#include <iomanip>
 
 Complex::Complex(): _real(0), _complex(0){}
 Complex::Complex(int real, int complex): _real(real), _complex(complex){}
@@ -42,19 +43,21 @@ Complex& Complex::operator-(const Complex& complex)
 }
 Complex& Complex::operator/(const Complex& complex)
 {
-    this->_real /= complex._real;
-    this->_complex /= complex._complex;
+    int denominator = pow(complex._real,2) + pow(complex._complex,2);
+    *this = (*this)*complex;
+    this->_real /= denominator;
+    this->_complex /= denominator;
     return *this;
 }
 std::ostream& operator<<(std::ostream& os, const Complex& complex)
 {
     if (complex._complex >= 0)
     {
-        os << complex._real << " + " << complex._complex << "i";
+        os << std::fixed << std::setprecision(0) << complex._real << " + " << complex._complex << "i";
     }
     else
     {
-        os << complex._real << " - " << static_cast<int>(std::abs(complex._complex)) << "i";
+        os << std::fixed << std::setprecision(0) << complex._real << " - " << std::abs(complex._complex) << "i";
     }
     return os;
 }
@@ -65,4 +68,8 @@ int Complex::getReal() const
 int Complex::getComplex() const
 {
     return _complex;
+}
+double Complex::operator()(std::function<double(const Complex& complex)> fun)
+{
+    return fun(*this);
 }
